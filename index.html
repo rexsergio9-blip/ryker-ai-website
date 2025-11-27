@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryker AI | Web3 & Intelligence/Branding Solutions</title>
+    <meta name="description" content="Ryker AI LLC - Web3 Loyalty, NFT Solutions, and AI Consulting for small and medium businesses.">
+    
+    <!-- Tailwind CSS (via CDN for zero setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            400: '#a78bfa',
+                            500: '#8b5cf6', // Violet
+                            600: '#7c3aed',
+                            900: '#4c1d95',
+                            accent: '#06b6d4', // Cyan
+                            dark: '#0f172a', // Slate 900
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom animations for that "Web3/AI" feel */
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #22d3ee, #a78bfa);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 1) 100%);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Subtle glow animation */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 15px -5px rgba(139, 92, 246, 0.3); }
+            50% { box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.4); }
+        }
+        .animate-glow {
+            animation: glow 4s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fas fa-cube text-brand-500 text-2xl"></i>
+                    <a href="#" class="font-bold text-2xl tracking-tighter text-white">
+                        RYKER <span class="text-brand-500">AI</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="hover:text-brand-400 transition-colors text-sm font-medium">Services</a>
+                    <a href="#pricing" class="hover:text-brand-400 transition-colors text-sm font-medium">Pricing</a>
+                    <a href="#demo" class="hover:text-brand-accent transition-colors text-sm font-medium flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span> Try Demo
+                    </a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white text-sm font-bold transition-all shadow-lg shadow-brand-500/20">
+                        Launch Project
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800 text-white">Services</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800 text-white">Pricing</a>
+                <a href="#demo" class="block px-3 py-2 rounded-md text-base font-medium text-brand-accent">Try AI Demo</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-brand-400 font-semibold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-hero-pattern">
+        <!-- Background Gradient Blobs -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-accent/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-sm font-semibold tracking-wide uppercase">
+                <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                Next Gen Business Solutions
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Unlock the Future of <br class="hidden md:block" />
+                <span class="gradient-text">Loyalty & Intelligence.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
+                From Web3 customer loyalty programs to seamless AI integration. We help small businesses and sole proprietors bridge the gap to the future economy.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 rounded-lg bg-white text-slate-900 font-bold hover:bg-brand-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Start Your Transformation
+                </a>
+                <a href="#services" class="px-8 py-4 rounded-lg border border-slate-700 hover:border-brand-500 hover:bg-slate-800/50 text-white font-semibold transition-all backdrop-blur-sm">
+                    View Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Reality Check (Pain Point) Section -->
+    <section id="why-now" class="py-16 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">The Digital Divide is Growing</h2>
+            <p class="text-slate-400 text-lg">
+                <span class="text-brand-accent font-semibold">91% of successful businesses</span> are already investing in AI. 
+                The technology landscape is moving faster than ever. 
+                <span class="text-white font-medium">Don't let your business get left behind.</span>
+                Ryker AI makes advanced tech attainable, understandable, and profitable for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive AI Demo Section -->
+    <section id="demo" class="py-24 bg-slate-950 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-900/10 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-brand-accent text-sm font-bold uppercase tracking-widest mb-2 block">Live Intelligence Demo</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Experience Ryker Intelligence</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    Don't just take our word for it. Test our proprietary AI models right now. 
+                    Select a tool below to generate instant insights for your business.
+                </p>
+            </div>
+
+            <!-- AI Tool Container -->
+            <div class="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Tool Tabs -->
+                <div class="flex border-b border-white/10">
+                    <button onclick="switchTab('strategy')" id="tab-strategy" class="flex-1 py-4 text-center text-sm font-bold uppercase tracking-wider text-white bg-white/5 border-b-2 border-brand-500 transition-all hover:bg-white/10">
+                        <i class="fas fa-chess-knight mr-2"></i> Strategy Spark
+                    </button>
+                    <button onclick="switchTab('nft')" id="tab-nft" class="flex-1 py-4 text-center text-sm font-bold uppercase tracking-wider text-slate-500 border-b-2 border-transparent hover:text-white transition-all hover:bg-white/5">
+                        <i class="fas fa-hexagon-nodes mr-2"></i> NFT Architect
+                    </button>
+                </div>
+
+                <div class="p-8 md:p-12">
+                    <!-- Tool 1: Strategy Spark -->
+                    <div id="tool-strategy" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-2">Business Type</label>
+                                <input type="text" id="strategy-biz" placeholder="e.g. Local Coffee Shop" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:border-brand-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-2">Current Pain Point</label>
+                                <input type="text" id="strategy-pain" placeholder="e.g. Low customer retention on weekdays" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:border-brand-500 focus:outline-none transition-colors">
+                            </div>
+                        </div>
+                        <button onclick="generateStrategy()" id="btn-strategy" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+                            ✨ Generate Strategic Spark
+                        </button>
+                    </div>
+
+                    <!-- Tool 2: NFT Architect -->
+                    <div id="tool-nft" class="hidden space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-400 mb-2">What is your business?</label>
+                            <input type="text" id="nft-biz" placeholder="e.g. Vintage Clothing Store" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:border-brand-accent focus:outline-none transition-colors">
+                        </div>
+                        <button onclick="generateNFT()" id="btn-nft" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-brand-accent hover:from-cyan-500 hover:to-cyan-400 text-white font-bold shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5">
+                            ✨ Design NFT Concept
+                        </button>
+                    </div>
+
+                    <!-- Output Area -->
+                    <div id="output-area" class="mt-8 hidden">
+                        <div class="h-px w-full bg-white/10 mb-8"></div>
+                        <div class="bg-slate-950/50 rounded-2xl p-6 border border-brand-500/30 relative">
+                            <div class="absolute -top-3 left-6 bg-slate-900 border border-brand-500/30 text-brand-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Ryker AI Analysis
+                            </div>
+                            <div id="ai-result" class="text-slate-300 leading-relaxed whitespace-pre-line min-h-[100px]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions / Services -->
+    <section id="services" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Our Ecosystem</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    We simplify the complex. Four pillars designed to modernize your operations and engage the next generation of customers.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Service 1: Web3 Loyalty -->
+                <div class="p-8 rounded-3xl card-gradient border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-900 flex items-center justify-center mb-6 shadow-lg shadow-brand-600/20">
+                        <i class="fas fa-gem text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Web3 & NFT Loyalty</h3>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        Move beyond paper punch cards. We build digital collectible (NFT) loyalty programs that turn customers into community members. Perfect for SMBs wanting to offer exclusive access and perks.
+                    </p>
+                    <ul class="text-sm text-brand-400 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> Token-gated content & discounts</li>
+                        <li><i class="fas fa-check mr-2"></i> Digital membership passes</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: AI Onboarding -->
+                <div class="p-8 rounded-3xl card-gradient border border-white/5 hover:border-brand-accent/50 transition-all group hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent to-cyan-700 flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Seamless AI Onboarding</h3>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        Overwhelmed by ChatGPT and automation tools? We provide hands-on consulting to integrate AI into your existing workflows without the technical headache.
+                    </p>
+                    <ul class="text-sm text-brand-accent space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> Operational automation</li>
+                        <li><i class="fas fa-check mr-2"></i> Staff training & tool setup</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Branding -->
+                <div class="p-8 rounded-3xl card-gradient border border-white/5 hover:border-pink-500/50 transition-all group hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-600 to-rose-900 flex items-center justify-center mb-6 shadow-lg shadow-pink-600/20">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Next-Gen Branding</h3>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        Future-proof your brand identity. We combine AI-driven design tools with human creativity to build marketing strategies that resonate in a digital-first world.
+                    </p>
+                    <ul class="text-sm text-pink-400 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> AI-assisted visual identity</li>
+                        <li><i class="fas fa-check mr-2"></i> Modern narrative building</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Strategy -->
+                <div class="p-8 rounded-3xl card-gradient border border-white/5 hover:border-emerald-500/50 transition-all group hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-600 to-green-900 flex items-center justify-center mb-6 shadow-lg shadow-emerald-600/20">
+                        <i class="fas fa-chess text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">AI Business Strategy</h3>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        Stop guessing. We use data-driven insights to uncover hidden revenue streams and optimize your business model for the AI era.
+                    </p>
+                    <ul class="text-sm text-emerald-400 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> Market prediction & analysis</li>
+                        <li><i class="fas fa-check mr-2"></i> Scalable growth roadmaps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-slate-900 border-t border-slate-800 relative">
+         <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -right-24 top-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-[80px]"></div>
+            <div class="absolute -left-24 bottom-1/4 w-96 h-96 bg-brand-accent/10 rounded-full blur-[80px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Consultation Tiers</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    Flexible engagement models designed for small business budgets. Start with a quick chat, pay only for the expertise you need.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Tier 1: The Spark -->
+                <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-brand-500/30 transition-all shadow-xl">
+                    <h3 class="text-xl font-bold text-white mb-2">The Spark</h3>
+                    <p class="text-brand-400 text-sm font-semibold uppercase tracking-wider mb-6">Discovery Call</p>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-white">Free</span>
+                        <span class="text-slate-500 ml-2">/ 10 mins</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                        Perfect for identifying if AI or Web3 is right for you. We'll identify your biggest pain point and see if we're a match.
+                    </p>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                        <li class="flex items-start"><i class="fas fa-check text-brand-500 mt-1 mr-3"></i> 10-minute intro chat</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-500 mt-1 mr-3"></i> Pain point identification</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-500 mt-1 mr-3"></i> Basic feasibility check</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 rounded-xl border border-brand-500 text-brand-400 font-semibold text-center hover:bg-brand-500 hover:text-white transition-all">
+                        Book Intro
+                    </a>
+                    <p class="text-xs text-slate-600 mt-4 text-center">* Strictly limited to 10 minutes.</p>
+                </div>
+
+                <!-- Tier 2: The Strategy (Featured) -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-brand-900/20 to-slate-950 border border-brand-500 shadow-2xl relative transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                        Most Popular
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">The Catalyst</h3>
+                    <p class="text-brand-accent text-sm font-semibold uppercase tracking-wider mb-6">Strategic Consulting</p>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-white">$150</span>
+                        <span class="text-slate-500 ml-2">/ hour</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                        Deep dive into operations. We map out your AI integration or design your NFT loyalty structure. Actionable advice, billed hourly.
+                    </p>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i> Workflow automation mapping</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i> Tool selection & setup</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i> Staff training sessions</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i> Brand strategy audit</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-center shadow-lg transition-all">
+                        Start Strategy
+                    </a>
+                </div>
+
+                <!-- Tier 3: The Build -->
+                <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-brand-500/30 transition-all shadow-xl">
+                    <h3 class="text-xl font-bold text-white mb-2">The Transformation</h3>
+                    <p class="text-pink-400 text-sm font-semibold uppercase tracking-wider mb-6">Project / Retainer</p>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-white">Custom</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                        For businesses ready to fully evolve. We build, launch, and manage your Web3 or AI systems on an ongoing basis.
+                    </p>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                        <li class="flex items-start"><i class="fas fa-check text-pink-500 mt-1 mr-3"></i> Full NFT program launch</li>
+                        <li class="flex items-start"><i class="fas fa-check text-pink-500 mt-1 mr-3"></i> Custom AI model training</li>
+                        <li class="flex items-start"><i class="fas fa-check text-pink-500 mt-1 mr-3"></i> Ongoing technical support</li>
+                        <li class="flex items-start"><i class="fas fa-check text-pink-500 mt-1 mr-3"></i> Monthly strategy reviews</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 rounded-xl border border-slate-700 text-white font-semibold text-center hover:bg-slate-800 transition-all">
+                        Request Quote
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 relative">
+                <!-- Decorative Circle -->
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-brand-accent rounded-full blur-[80px] opacity-20"></div>
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-800 p-8 shadow-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                        <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                        <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="space-y-4 font-mono text-sm text-brand-400">
+                        <p>> Initiating SMB Protocol...</p>
+                        <p>> Integrating Blockchain Assets... <span class="text-green-400">Done</span></p>
+                        <p>> Optimizing AI Models... <span class="text-green-400">Done</span></p>
+                        <p class="text-white animate-pulse">> Ready to Launch.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Democratizing The Future</h2>
+                <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                    At Ryker AI, we believe advanced technology shouldn't be reserved for Fortune 500 companies. 
+                </p>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                    Whether you run a coffee shop, a boutique, or a consulting firm, you deserve the same powerful tools—like NFT loyalty programs and AI analytics—that the giants use. We make it easy, affordable, and actionable.
+                </p>
+                <a href="#contact" class="text-brand-400 hover:text-white font-semibold flex items-center gap-2 transition-colors">
+                    Read our full manifesto <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Section -->
+    <section id="contact" class="py-24 bg-slate-950 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 rounded-[2rem] p-8 md:p-16 border border-white/10 shadow-2xl text-center relative overflow-hidden animate-glow">
+                
+                <!-- Background accent -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 via-brand-accent to-brand-500"></div>
+
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Evolve?</h2>
+                <p class="text-slate-400 mb-10 max-w-xl mx-auto text-lg">
+                    The consultation is free. The opportunity cost of waiting is high. Let's see how we can upgrade your business today.
+                </p>
+                
+                <form action="https://formspree.io/f/your_form_id" method="POST" class="max-w-md mx-auto space-y-4 text-left">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-400 mb-2">Email Address</label>
+                        <input type="email" name="email" id="email" required 
+                               class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-slate-700 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                               placeholder="name@business.com">
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-sm font-medium text-slate-400 mb-2">I'm interested in...</label>
+                        <select name="interest" id="interest" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-slate-700 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                            <option>AI Onboarding & Consulting</option>
+                            <option>Web3 & NFT Loyalty</option>
+                            <option>Branding & Strategy</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-lg shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Request Consultation
+                    </button>
+                </form>
+                
+                <div class="mt-8 text-sm text-slate-500">
+                    Direct inquiries: <a href="mailto:contact@rykerai.com" class="text-brand-400 hover:text-brand-300 underline">contact@rykerai.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-bold text-xl text-white tracking-tight">RYKER <span class="text-brand-500">AI</span></span>
+                <p class="text-slate-500 text-sm mt-2">Empowering SMBs with Web3 & Artificial Intelligence.</p>
+                <p class="text-slate-600 text-xs mt-1">© <script>document.write(new Date().getFullYear())</script> Ryker AI LLC.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-500 hover:text-brand-400 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-slate-500 hover:text-brand-400 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-slate-500 hover:text-brand-400 transition-colors"><i class="fab fa-discord text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Gemini API Configuration
+        const apiKey = "AIzaSyCBBnrcQLd0xFEoY5rVOX1Bsc2LXFJZMyM"; // System will inject the key at runtime
+
+        // Tab Switching Logic
+        function switchTab(tab) {
+            const strategyContent = document.getElementById('tool-strategy');
+            const nftContent = document.getElementById('tool-nft');
+            const strategyTab = document.getElementById('tab-strategy');
+            const nftTab = document.getElementById('tab-nft');
+            const outputArea = document.getElementById('output-area');
+
+            // Hide output when switching
+            outputArea.classList.add('hidden');
+            document.getElementById('ai-result').innerHTML = '';
+
+            if (tab === 'strategy') {
+                strategyContent.classList.remove('hidden');
+                nftContent.classList.add('hidden');
+                
+                strategyTab.classList.add('text-white', 'bg-white/5', 'border-brand-500');
+                strategyTab.classList.remove('text-slate-500', 'border-transparent');
+                
+                nftTab.classList.remove('text-white', 'bg-white/5', 'border-brand-500'); // Note: border color for NFT tab logic handled in CSS/classes usually but simplified here
+                nftTab.classList.add('text-slate-500', 'border-transparent');
+                // Fix specific border color for active state visually
+                nftTab.style.borderColor = 'transparent';
+                strategyTab.style.borderColor = '#8b5cf6';
+            } else {
+                strategyContent.classList.add('hidden');
+                nftContent.classList.remove('hidden');
+
+                nftTab.classList.add('text-white', 'bg-white/5');
+                nftTab.style.borderColor = '#06b6d4'; // Cyan for NFT
+                nftTab.classList.remove('text-slate-500', 'border-transparent');
+
+                strategyTab.classList.remove('text-white', 'bg-white/5');
+                strategyTab.style.borderColor = 'transparent';
+                strategyTab.classList.add('text-slate-500', 'border-transparent');
+            }
+        }
+
+        // Helper: Call Gemini API
+        async function callGemini(prompt) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{
+                    parts: [{ text: prompt }]
+                }]
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error('API Error');
+
+                const data = await response.json();
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                return "Our AI servers are currently experiencing heavy traffic. Please try again in a moment.";
+            }
+        }
+
+        // Feature 1: Strategy Generator
+        async function generateStrategy() {
+            const biz = document.getElementById('strategy-biz').value;
+            const pain = document.getElementById('strategy-pain').value;
+            const btn = document.getElementById('btn-strategy');
+            const outputArea = document.getElementById('output-area');
+            const resultDiv = document.getElementById('ai-result');
+
+            if (!biz || !pain) {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            // Loading State
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Data...';
+            btn.disabled = true;
+            outputArea.classList.remove('hidden');
+            resultDiv.innerHTML = '<span class="animate-pulse">Analyzing market data and generating strategies...</span>';
+
+            const prompt = `You are a high-end business consultant for Ryker AI. The user runs a "${biz}" and is struggling with "${pain}". 
+            Provide 3 short, high-impact, actionable bullet points on how AI or Web3 technology could solve this specific problem. 
+            Tone: Professional, futuristic, encouraging. Keep it under 150 words total. Format with bold headers for each point.`;
+
+            const text = await callGemini(prompt);
+            
+            // Format bold text to HTML
+            const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-brand-400">$1</strong>');
+            
+            resultDiv.innerHTML = formattedText;
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+
+        // Feature 2: NFT Generator
+        async function generateNFT() {
+            const biz = document.getElementById('nft-biz').value;
+            const btn = document.getElementById('btn-nft');
+            const outputArea = document.getElementById('output-area');
+            const resultDiv = document.getElementById('ai-result');
+
+            if (!biz) {
+                alert("Please enter your business type.");
+                return;
+            }
+
+            // Loading State
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Minting Concept...';
+            btn.disabled = true;
+            outputArea.classList.remove('hidden');
+            resultDiv.innerHTML = '<span class="animate-pulse">Designing tokenomics and visual concept...</span>';
+
+            const prompt = `You are a Web3 Loyalty Architect. Create a creative NFT loyalty program concept for a "${biz}".
+            1. **Collection Name**: A cool, catchy name for the NFT series.
+            2. **Visual Style**: Briefly describe what the NFT art looks like.
+            3. **Utility**: One specific, high-value perk the holder gets (e.g. lifetime discount, access to VIP area).
+            Tone: Hype, exciting, innovative. Keep it short.`;
+
+            const text = await callGemini(prompt);
+             // Format bold text to HTML and style slightly differently for NFT
+             const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-brand-accent">$1</strong>');
+
+            resultDiv.innerHTML = formattedText;
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
